@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const env = require('dotenv').config()
 
 
 module.exports = {
@@ -62,5 +63,12 @@ module.exports = {
     extend(config, ctx) {
       
     }
+  },
+
+  /*
+   ** Custom env variables
+   */
+  env: {
+    serverUrl: process.env.SERVER_URL || 'http://localhost:3000'
   }
 }
