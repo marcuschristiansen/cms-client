@@ -20,7 +20,6 @@ export const actions = {
 
     async fetchUser({ commit, dispatch }, accessToken) {
         try {
-          console.log('WORKING')
             this.userHttp = new UserHttp(accessToken);
             const result = await this.userHttp.user()
 

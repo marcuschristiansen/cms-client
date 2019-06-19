@@ -12,11 +12,11 @@ class AuthHttp {
   }
 
   logout() {
-    return axios.post(`${this.prefix}/logout`)
+    return axios.get(`${this.prefix}/logout`)
   }
 
-  signup() {
-    return axios.post(`${this.prefix}/signup`)
+  signup(data) {
+    return axios.post(`${this.prefix}/signup`, data)
   }
 }
 

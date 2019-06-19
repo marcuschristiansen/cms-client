@@ -62,9 +62,23 @@ export default {
     },
     methods: {
         async handleLogout() {
-            const res = await this.$store.dispatch('auth/logout')
-        
+          try {
+            const result = await this.$store.dispatch('auth/logout')
+
+            this.$toast.open({
+              message: result.data.message,
+              type: 'is-success'
+            })
+
             this.$router.push({ name: 'index' })
+          } catch (error) {
+            this.$toast.open({
+              duration: 5000,
+              message: err,
+              position: 'is-top',
+              type: 'is-danger'
+            })
+          } 
         }
     }
 }

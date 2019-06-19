@@ -51,14 +51,35 @@ export const actions = {
     commit('setAuthStatus', value)
   },
 
+  createUser({ commit, dispatch }, values) {
+    return new Promise((resolve, reject) => {
+      this.authHttp = new AuthHttp()
+      this.authHttp.signup(values)
+      .then(result => {
+        resolve(result);
+      })
+      .catch(error => {
+        reject(error.response);
+      })
+    });
+  },
+
   logout({ commit, dispatch }) {
       return new Promise((resolve, reject) => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
+        this.authHttp = new AuthHttp()
+        this.authHttp.logout()
+        .then(result => {
+          localStorage.removeItem('token')
+          localStorage.removeItem('user')
 
-        dispatch('setToken', false)
-        dispatch('user/setUser', false, { root: true })
-        resolve()
+          dispatch('setToken', false)
+          dispatch('user/setUser', false, { root: true })
+
+          resolve(result)
+        })
+        .catch(error => {
+          reject(result.response)
+        })
       })
   }
 }

@@ -69,6 +69,9 @@ module.exports = {
    ** Custom env variables
    */
   env: {
-    serverUrl: process.env.SERVER_URL || 'http://localhost:3000'
+    serverUrl: process.env.SERVER_URL || 'http://localhost:3000',
+    name: process.env.NAME,
+    email: process.env.EMAIL || '',
+    password: process.env.PASSWORD || ''
   }
 }
