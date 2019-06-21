@@ -41,7 +41,6 @@
         </section>
 
         <footer class="modal-card-foot">
-            <b-button class="button" @click="$parent.close()">Close</b-button>
             <b-button v-if="!passwordReset" class="button is-primary" @click="handleLogin" :loading="loading">Login</b-button>
             <b-button v-if="passwordReset" class="button is-primary" @click="handlePasswordReset" :loading="loading">Reset password</b-button>
         </footer>

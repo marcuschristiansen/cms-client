@@ -34,7 +34,7 @@
 import TopNav from '~/components/nav/TopNav'
 
 export default {
-  middleware: ['authenticated', 'init'],
+  middleware: ['init', 'authenticated'],
   components: {
     TopNav
   },

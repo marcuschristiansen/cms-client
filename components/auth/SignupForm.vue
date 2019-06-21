@@ -54,7 +54,6 @@
         </section>
 
         <footer class="modal-card-foot" v-if="!accountCreated">
-            <b-button class="button" @click="$parent.close()">Close</b-button>
             <b-button class="button is-primary" @click="handleSignup" :loading="loading">Signup</b-button>
         </footer>
     </div>

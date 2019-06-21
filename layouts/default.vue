@@ -9,7 +9,7 @@
 import TopNav from '~/components/nav/TopNav'
 
 export default {
-  middleware: ['init'],
+  middleware: ['init', 'guest'],
   components: {
     TopNav
   }
